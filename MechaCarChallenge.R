@@ -14,12 +14,15 @@ coil <- read.table("C:/Users/Teresa - School/Documents/1. U of T SCS - Data Anal
 
 summary(coil$PSI)
 
+## Summary statistics for all lots 
 total_summary <- coil %>%
   summarize(mean = mean(PSI),
             median = median(PSI),
             variance = var(PSI),
             sd = sd(PSI))
 
+
+## Summary statistics for each lot 
 lot_summary <- coil %>% 
   group_by(Manufacturing_Lot)%>% 
   summarize(mean = mean(PSI),
@@ -27,8 +30,18 @@ lot_summary <- coil %>%
             variance = var(PSI),
             sd = sd(PSI))
 
-  
+# T-Tests on Suspension Coils
 
+## One sample t-test comparing PSI across all manufacturing lots to population mean 
+t.test(coil[['PSI']])
 
+## One sample t-test comparing PSI each manufacturing lot to population mean 
+coil.Lot1 <- 
+    subset(coil, Manufacturing_Lot == 'Lot1')
 
+coil.Lot2 <- 
+  subset(coil, Manufacturing_Lot == 'Lot2')
+
+coil.Lot3 <- 
+  subset(coil, Manufacturing_Lot == 'Lot3')
 
