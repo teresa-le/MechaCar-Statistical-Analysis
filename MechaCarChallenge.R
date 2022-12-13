@@ -2,33 +2,39 @@ library(dplyr)
 
 # Linear regression to predict MPG
 
+## Import the file 
+
 mecha <- read.csv("C:/Users/Teresa - School/Documents/1. U of T SCS - Data Analytics Bootcamp/Module 16 - Statistics and R/MechaCar-Statistical-Analysis/MechaCar_mpg.csv", header = T)
 
+## Create a multiple linear regression model to predict mpg 
 mecha.model <- lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, mecha)
 
+## View summary of results to determine  p-value and the r-squared value for the model =
 summary(mecha.model)
 
 # Create visualizations for trip analysis 
 
+## Import the file 
 coil <- read.table("C:/Users/Teresa - School/Documents/1. U of T SCS - Data Analytics Bootcamp/Module 16 - Statistics and R/MechaCar-Statistical-Analysis/Suspension_Coil.csv", sep = ",", header = TRUE)
 
-summary(coil$PSI)
-
-## Summary statistics for all lots 
+## Summary statistics of the PSI column for all lots 
 total_summary <- coil %>%
   summarize(mean = mean(PSI),
             median = median(PSI),
             variance = var(PSI),
             sd = sd(PSI))
 
+View(total_summary)
 
-## Summary statistics for each lot 
+## Summary statistics of the PSI column for each lot 
 lot_summary <- coil %>% 
   group_by(Manufacturing_Lot)%>% 
   summarize(mean = mean(PSI),
             median = median(PSI),
             variance = var(PSI),
             sd = sd(PSI))
+
+View(lot_summary)
 
 # T-Tests on Suspension Coils
 
