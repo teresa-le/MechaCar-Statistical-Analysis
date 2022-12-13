@@ -2,7 +2,7 @@
 
 ## Linear Regression to Predict MPG
 
-<img src="https://github.com/teresa-le/MechaCar_Statistical_Analysis/blob/main/Resources/Mecha%20Model%20Multiple%20Linear%20Regression%20Model.png">
+<img src="https://github.com/teresa-le/MechaCar_Statistical_Analysis/blob/main/Resources/Mecha%20Model%20-%20Multiple%20Linear%20Regression%20Model.png">
 
 Vehicle_weight, spoiler_angle, and AWD's p-values are more than 0.05 so they likely contribute a random amount of variance to the mpg values in the dataset. 
 
