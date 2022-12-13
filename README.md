@@ -53,4 +53,14 @@ The p-value for lot 3 is less than the significance level 0.05 so there is suffi
 
 ## Study Design: MechaCar vs Competition
 
+In this study, we will be comparing MechaCar to similar cars belonging to AutosRUs’ competitors. I would like to see whether there is a statistical difference between the mean safety ratings that MechaCar receives in comparison to other cars. 
 
+<b>Test</b>: The metric that is going to be tested is the safety ratings of MechaCars vs. the latest models of similar vehicles from other manufacturers. 
+
+<b>Null Hypothesis:</b>The mean safety ratings for all of the cars are equal. 
+
+<b>Alternative Hypothesis:</b>At least one of the mean safety ratings is different from all of the other groups of cars. 
+
+<b>Statistical Test</b>: The statistical test that I am going to use to test the hypothesis is a one-way ANOVA; multiple samples are being compared (safety ratings of multiple different cars) and only one metric is being tested, which is the safety rating. 
+
+<b>Data Requirements:</b> The data that would be required to run the statistical tests would be samples of the safety rating scores that MechaCar and AutosRUs' competitor's cars received.
