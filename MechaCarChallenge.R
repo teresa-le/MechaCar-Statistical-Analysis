@@ -39,9 +39,15 @@ View(lot_summary)
 # T-Tests on Suspension Coils
 
 ## One sample t-test comparing PSI across all manufacturing lots to population mean 
-t.test(coil[['PSI']])
+
+### Test for normality and perform t-test 
+shapiro.test(coil$PSI)
+
+t.test(log10(coil[['PSI']]),mu=mean(log10(1500)))
 
 ## One sample t-test comparing PSI each manufacturing lot to population mean 
+
+### Create subsets of each lot 
 coil.Lot1 <- 
     subset(coil, Manufacturing_Lot == 'Lot1')
 
@@ -50,4 +56,16 @@ coil.Lot2 <-
 
 coil.Lot3 <- 
   subset(coil, Manufacturing_Lot == 'Lot3')
+
+### Test for normality and perform t-tests 
+
+shapiro.test(coil.Lot1$PSI)
+shapiro.test(coil.Lot2$PSI)
+shapiro.test(coil.Lot3$PSI)
+
+t.test(log10(coil.Lot1[['PSI']]),mu=mean(log10(1500)))
+
+t.test(log10(coil.Lot2[['PSI']]),mu=mean(log10(1500)))
+
+t.test(log10(coil.Lot3[['PSI']]),mu=mean(log10(1500)))
 
